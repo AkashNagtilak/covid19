@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Covid 19</title>
+       <link rel = "icon" href ="https://www.fda.gov/files/covid19-1600x900.jpg"
+        type = "image/x-icon">
+  </head>
+  <body>
+  <h2 class="alert alert-light border rounded mt-3 bg-secondary text-white text-center">Covid 19 - Global Data</h2>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="card col m-1 card text-white bg-primary">
+          <div class="card-body">
+            <h6 class="card-title">New Confirmed</h6>
+            <p class="card-text">{{globalSummary.NewConfirmed}}</p>
+          </div>
+      </div>
+
+       <div class="card col m-1 text-white bg-warning">
+          <div class="card-body">
+            <h6 class="card-title">Total Confirmed</h6>
+            <p class="card-text">{{globalSummary.TotalConfirmed}}</p>
+          </div>
+      </div>
+
+       <div class="card col m-1 text-white bg-dark">
+          <div class="card-body">
+            <h6 class="card-title">New Deaths</h6>
+            <p class="card-text">{{globalSummary.NewDeaths}}</p>
+          </div>
+      </div>
+
+       <div class="card col m-1  text-white bg-danger">
+          <div class="card-body">
+            <h6 class="card-title">Total Deaths</h6>
+            <p class="card-text">{{globalSummary.TotalDeaths}}</p>
+          </div>
+      </div>
+
+       <div class="card col m-1 text-white bg-success">
+          <div class="card-body">
+            <h6 class="card-title">New Recovered</h6>
+            <p class="card-text">{{globalSummary.NewRecovered}}</p>
+          </div>
+      </div>
+
+       <div class="card col m-1 text-white bg-secondary">
+          <div class="card-body">
+            <h6 class="card-title">Total Recovered</h6>
+            <p class="card-text">{{globalSummary.TotalRecovered}}</p>
+          </div>
+      </div>
+
+        <h4 class="alert alert-light border rounded mt-3 bg-danger text-white">Country Wise Summary</h4>
+
+        <table class="table mt-2">
+            <thead class="thead-dark text-white bg-dark">
+            <tr>
+                <th scope="col">S No.</th>
+                <th scope="col">Country</th>
+                <th scope="col">Total Confirmed</th>
+                <th scope="col">Total Deaths</th>
+                <th scope="col">Total Recovered</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for c in Countries %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{c.Country}}</td>
+                <td>{{c.TotalConfirmed}}</td>
+                <td>{{c.TotalDeaths}}</td>
+                <td>{{c.TotalRecovered}}</td>
+            </tr>
+            {% endfor%}
+
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
